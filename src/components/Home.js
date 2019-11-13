@@ -5,51 +5,38 @@ import {
   GridList,
   GridListTile,
   ButtonBase,
-  Box,
 } from "@material-ui/core";
-import { Link, withRouter } from "react-router-dom"
+import { Link, withRouter } from "react-router-dom";
 import FaceIcon from "@material-ui/icons/Face";
 import ResumeIcon from "@material-ui/icons/Description";
 import ContactIcon from "@material-ui/icons/ContactMail";
-import Particles from "react-particles-js";
 
 function Home() {
   return (
-    <div>
-      <Particles
-        params={particleParams}
-        style={{
-          position: "absolute",
-          height: "100%",
-          width: "100%"
-        }}
-      />
       <Grid
         container
         spacing={1}
         alignItems="center"
         justify="center"
         direction="column"
-        style={{ minHeight: "100vh" }}
+        style={{ minHeight: "100vh", padding: "10px" }}
       >
-        <Box style={{ backgroundColor: "#282a36" }}>
-          <Typography variant="h3">
-            Hi I'm <b>Raine</b>
-          </Typography>
+        <Typography variant="h3">
+          Hi I'm <b>Raine</b>
+        </Typography>
 
-          <Typography
-            variant="subtitle2"
-            display="block"
-            style={{ marginTop: "1em" }}
-          >
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            <br /> Quos blanditiis tenetur unde suscipit, <br />
-            quam beatae rerum inventore consectetur,
-            <br /> neque doloribus, cupiditate numquam dignissimos laborum
-            <br />
-            fugiat deleniti? Eum quasi quidem quibusdam.
-          </Typography>
-        </Box>
+        <Typography
+          variant="subtitle2"
+          display="block"
+          style={{ marginTop: "1em" }}
+        >
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          <br /> Quos blanditiis tenetur unde suscipit, <br />
+          quam beatae rerum inventore consectetur,
+          <br /> neque doloribus, cupiditate numquam dignissimos laborum
+          <br />
+          fugiat deleniti? Eum quasi quidem quibusdam.
+        </Typography>
         <GridList
           cellHeight={"10em"}
           col={3}
@@ -79,27 +66,7 @@ function Home() {
           </GridListTile>
         </GridList>
       </Grid>
-    </div>
   );
 }
-
-const particleParams = {
-  particles: {
-    number: {
-      value: 50
-    },
-    size: {
-      value: 3
-    }
-  },
-  interactivity: {
-    events: {
-      onhover: {
-        enable: true,
-        mode: "repulse"
-      }
-    }
-  }
-};
 
 export default withRouter(Home);
