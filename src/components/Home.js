@@ -5,8 +5,9 @@ import {
   GridList,
   GridListTile,
   ButtonBase,
-  Box
+  Box,
 } from "@material-ui/core";
+import { Link, withRouter } from "react-router-dom"
 import FaceIcon from "@material-ui/icons/Face";
 import ResumeIcon from "@material-ui/icons/Description";
 import ContactIcon from "@material-ui/icons/ContactMail";
@@ -31,8 +32,8 @@ function Home() {
         direction="column"
         style={{ minHeight: "100vh" }}
       >
-        <Box style={{ backgroundColor: "#000" }}>
-          <Typography variant="h2">
+        <Box style={{ backgroundColor: "#282a36" }}>
+          <Typography variant="h3">
             Hi I'm <b>Raine</b>
           </Typography>
 
@@ -59,7 +60,7 @@ function Home() {
           }}
         >
           <GridListTile style={{ width: "33.3%" }}>
-            <ButtonBase>
+            <ButtonBase component={Link} to={"/about"}>
               <FaceIcon style={{ color: "#fff", marginRight: "8px" }} />
               <Typography variant="button">About</Typography>
             </ButtonBase>
@@ -101,4 +102,4 @@ const particleParams = {
   }
 };
 
-export default Home;
+export default withRouter(Home);
