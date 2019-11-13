@@ -30,10 +30,7 @@ function App() {
         style={{
           position: "fixed",
           height: "100%",
-          width: "100%",
-          top: 0,
-          left: 0,
-          rigt: 0
+          width: "100%"
         }}
       />
       <ThemeProvider theme={theme}>

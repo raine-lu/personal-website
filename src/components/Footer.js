@@ -7,12 +7,7 @@ import Link from "@material-ui/core/Link";
 function Copyright() {
   return (
     <Typography variant="body2" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
+      {" "}
     </Typography>
   );
 }
@@ -22,6 +17,7 @@ const useStyles = makeStyles(theme => ({
     marginTop: "auto",
     backgroundColor: "#282a36",
     height: "2em",
+    overflowY: "hidden"
   }
 }));
 
