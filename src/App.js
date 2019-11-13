@@ -6,12 +6,9 @@ import Rainy from "./rainy.jpg";
 
 const theme = createMuiTheme({
   overrides: {
-    MuiContainer: {
+    MuiTypography: {
       root: {
-        width: "50%",
-        left: "50%",
-        top: "50%",
-        overflow: "auto"
+        color: "#fff"
       }
     }
   }
