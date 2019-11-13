@@ -21,25 +21,31 @@ function App() {
   return (
     <div
       style={{
+        backgroundColor: "#000",
+        margin: 0,
         minHeight: "100vh",
         padding: "0px",
         border: "0px",
         margin: "0px",
-        minWidth: "100vw",
-        backgroundColor: "#000",
-        backgroundSize: "cover",
-        backgroundAttachment: "fixed",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        backgroundImage: "url(" + Rainy + ")", //syntax for background image
-        opacity: 0.75
+        minWidth: "100vw" 
       }}
     >
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Home />
-      </ThemeProvider>
-    </div>
+      <div
+        style={{
+          backgroundSize: "cover",
+          backgroundAttachment: "fixed",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundImage: "url(" + Rainy + ")", //syntax for background image
+          opacity: 0.75
+        }}
+      > 
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <Home />
+        </ThemeProvider>
+      </div>
+     </div> 
   );
 }
 
