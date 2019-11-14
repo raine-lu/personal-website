@@ -6,8 +6,8 @@ import Link from "@material-ui/core/Link";
 
 function Copyright() {
   return (
-    <Typography variant="body2" align="center">
-      {" "}
+    <Typography variant="body2" align="right">
+      Copyright 
     </Typography>
   );
 }
@@ -15,9 +15,10 @@ function Copyright() {
 const useStyles = makeStyles(theme => ({
   footer: {
     marginTop: "auto",
-    backgroundColor: "#282a36",
+    backgroundColor: "#282f36",
     height: "2em",
-    overflowY: "hidden"
+    overflowY: "hidden",
+    paddingTop: "8px"
   }
 }));
 

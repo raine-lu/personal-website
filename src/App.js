@@ -1,7 +1,6 @@
 import React from "react";
 import { Box, createMuiTheme, CssBaseline } from "@material-ui/core";
 import { ThemeProvider } from "@material-ui/styles";
-import Particles from "react-particles-js";
 import RouterConfig from "./components/RouterConfig";
 import Footer from "./components/Footer";
 
@@ -11,7 +10,7 @@ const theme = createMuiTheme({
       root: {
         color: "#fff"
       }
-    }
+    },
   }
 });
 
@@ -22,43 +21,19 @@ function App() {
         backgroundColor: "#282a36",
         padding: "0px", // remove white space on right hand side
         margin: "0px", // remove white space on right hand side
-        overflowX: "hidden" // remove white space on right hand side
+        overflowX: "hidden",// remove white space on right hand side
+        height: "100%",
+        minHeight: "100%",
       }}
     >
-      <Particles
-        params={particleParams}
-        style={{
-          position: "fixed",
-          height: "100%",
-          width: "100%"
-        }}
-      />
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <RouterConfig />
-        <Footer />
       </ThemeProvider>
     </Box>
   );
 }
 
-const particleParams = {
-  particles: {
-    number: {
-      value: 50
-    },
-    size: {
-      value: 3
-    }
-  },
-  interactivity: {
-    events: {
-      onhover: {
-        enable: true,
-        mode: "repulse"
-      }
-    }
-  }
-};
+
 
 export default App;
