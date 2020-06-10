@@ -1,150 +1,110 @@
 import React from "react";
 import {
-  Paper,
   Grid,
   Typography,
-  Link,
   Card,
-  CardActions,
   CardContent,
-  Avatar,
-  List,
-  ListItem,
-  ListItemAvatar,
-  ListItemText,
-  Button,
-  ButtonGroup
+  Breadcrumbs,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import Rainy from "../raining.jpg";
 import { styled } from "@material-ui/core/styles";
-import InfoIcon from "@material-ui/icons/Info";
 import EmailIcon from "@material-ui/icons/Email";
-import { FaGithubAlt } from "react-icons/fa";
-import HomeIcon from "@material-ui/icons/Home";
-import ResumeIcon from "@material-ui/icons/Description";
-import ContactIcon from "@material-ui/icons/ContactMail";
-import FaceIcon from "@material-ui/icons/Face";
+import { FaGithubAlt, FaRedditAlien } from "react-icons/fa";
 
 const TypographyLite = styled(Typography)({
-  color: "#000"
+  color: "#fff",
 });
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    height: "100vh"
-  },
-  image: {
-    backgroundImage: "url(" + Rainy + ")",
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    opacity: 0.75
-  },
+const useStyles = makeStyles((theme) => ({
   contact: {
-    paddingTop: "3em",
+    paddingTop: "1.5em",
     paddingLeft: "2em",
-    paddingRight: "2em"
-  },
-  card: {
-    marginTop: "3.5em",
-    backgroundColor: "#282a36",
-    opacity: 0.55
+    paddingRight: "2em",
+    paddingBottom: "1.5em",
   },
   icon: {
-    marginRight: "8px"
-  }
+    marginRight: "8px",
+  },
 }));
 
 export default function Contact() {
   const classes = useStyles();
 
   return (
-    <Grid container component="main" className={classes.root}>
-      <Grid
-        item
-        xs={12}
-        sm={8}
-        md={8}
-        component={Paper}
-        square
-        className={classes.contact}
-      >
-        <div style={{ minHeight: "77vh", height: "77vh", overflow: "auto" }}>
-          <TypographyLite variant="h3" component="h1" gutterBottom>
-            Contact Me
-          </TypographyLite>
-          <Card className={classes.card}>
-            <CardContent>
-              <Grid container>
-                <Grid item xs={12} sm={12} md={6}>
-                  <ListItem>
-                    <ListItemAvatar>
-                      <Avatar>
-                        <EmailIcon />
-                      </Avatar>
-                    </ListItemAvatar>
-                    <ListItemText
-                      primary="Email"
-                      secondary="contact@rainelu.me"
-                      secondaryTypographyProps={{ color: "#fff" }}
-                    />
-                  </ListItem>
-                </Grid>
-                <Grid item xs={12} sm={12} md={6}>
-                  <ListItem
-                    component={Link}
-                    href="https://github.com/halfapotatopie"
-                    target="_blank"
-                    rel="noreferrer"
+    <div>
+      <Grid container className={classes.contact}>
+        <Grid item xs={12} sm={12} md={12} square>
+          <div style={{ overflow: "auto" }}>
+            <TypographyLite variant="h3" component="h1" gutterBottom>
+              Find Me
+            </TypographyLite>
+            <TypographyLite
+              variant="body2"
+              style={{ marginTop: "1.5em", marginBottom: "1.5em" }}
+            >
+              I prefer to stay off most social media, though I lurk on{" "}
+              <b>Reddit</b> quite frequently. My favourite subreddits include
+              the likes of{" "}
+              <i style={{ backgroundColor: "#343633", color: "#B2ECFB" }}>
+                r/cats
+              </i>
+              ,{" "}
+              <i style={{ backgroundColor: "#343633", color: "#B2ECFB" }}>
+                r/AskHistorians
+              </i>{" "}
+              and the good old{" "}
+              <i style={{ backgroundColor: "#343633", color: "#B2ECFB" }}>
+                r/ProgrammerHumor
+              </i>
+              .
+            </TypographyLite>
+            <Card>
+              <CardContent>
+                <Typography
+                  variant="overline"
+                  style={{ color: "#000", marginTop: "1.5em" }}
+                >
+                  These are my{" "}
+                  <b style={{ color: "#FFB7C3", backgroundColor: "#343633" }}>
+                    sole accounts
+                  </b>
+                  . Other than this website. I will not use anything else to
+                  contact you.
+                </Typography>
+
+                <Grid container align="center" justify="center" direction="row">
+                  <Breadcrumbs
+                    style={{ marginTop: "1.5em", marginBottom: "1em" }}
                   >
-                    <ListItemAvatar>
-                      <Avatar>
-                        <FaGithubAlt />
-                      </Avatar>
-                    </ListItemAvatar>
-                    <ListItemText
-                      primary="Github"
-                      secondary="halfapotatopie"
-                      secondaryTypographyProps={{ color: "#fff" }}
-                    />
-                  </ListItem>
+                    <Typography style={{ color: "#000", display: "flex" }}>
+                      <EmailIcon
+                        style={{
+                          marginRight: 4,
+                          marginLeft: 4,
+                          width: 20,
+                          height: 20,
+                        }}
+                      />
+                      <b>raine.me.lu@gmail.com</b>
+                    </Typography>
+
+                    <Typography style={{ color: "#000", display: "flex" }}>
+                      <FaRedditAlien
+                        style={{
+                          marginRight: 4,
+                          width: 20,
+                          height: 20,
+                        }}
+                      />
+                      <b>u/halfapotatopie</b>
+                    </Typography>
+                  </Breadcrumbs>
                 </Grid>
-              </Grid>
-            </CardContent>
-          </Card>
-        </div>
-
-        <ButtonGroup color="secondary" variant="text">
-          <Button component={Link} to={"/"}>
-            <HomeIcon className={classes.icon} /> Home
-          </Button>
-          <Button component={Link} to={"/resume"}>
-            <ResumeIcon className={classes.icon} /> Resume
-          </Button>
-          <Button component={Link} to={"/contact"}>
-            <FaceIcon className={classes.icon} /> About
-          </Button>
-        </ButtonGroup>
-
-        <div
-          style={{
-            position: "fixed",
-            bottom: 0,
-          }}
-        >
-          <TypographyLite
-            variant="caption"
-            component={Link}
-            href="https://www.pexels.com/photo/taxi-on-the-road-1824270/?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Credit: Photo by Victor Miyata from Pexels
-          </TypographyLite>
-        </div>
+              </CardContent>
+            </Card>
+          </div>
+        </Grid>
       </Grid>
-      <Grid item xs={false} sm={4} md={4} className={classes.image} />
-    </Grid>
+    </div>
   );
 }
